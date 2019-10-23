@@ -24,3 +24,5 @@ call vundle#end()
 " NerdTree
 map <F9> :NERDTreeToggle<CR>
 map <F10> <C-w><C-w>
+" Incremental search
+set incsearch
