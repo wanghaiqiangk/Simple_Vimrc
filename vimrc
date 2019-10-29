@@ -26,3 +26,9 @@ map <F9> :NERDTreeToggle<CR>
 map <F10> <C-w><C-w>
 " Incremental search
 set incsearch
+" Show newline character
+set ffs=unix
+set encoding=utf-8
+set fileencoding=utf-8
+set listchars=eol:¶
+set list
