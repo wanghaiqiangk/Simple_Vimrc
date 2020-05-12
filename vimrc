@@ -7,6 +7,7 @@ set secure
 "" remap esc to C-g
 inoremap <C-g> <ESC>
 vnoremap <C-g> <ESC>
+cnoremap <C-g> <C-c>
 
 "" highlight syntax, default
 syntax on
