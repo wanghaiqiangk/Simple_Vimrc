@@ -4,6 +4,10 @@ set nocompatible
 set exrc
 set secure
 
+"" remap esc to C-g
+inoremap <C-g> <ESC>
+vnoremap <C-g> <ESC>
+
 "" highlight syntax, default
 syntax on
 
