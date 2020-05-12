@@ -49,7 +49,7 @@ hi CursorLineNR cterm=NONE ctermbg=yellow ctermfg=darkred guibg=NONE
 set ffs=unix
 set encoding=utf-8
 set fileencoding=utf-8
-set listchars=eol:¶
+set listchars=tab:\ \ ,eol:¶
 set list
 
 "" matchit, since vim 6.0 it's built-in
