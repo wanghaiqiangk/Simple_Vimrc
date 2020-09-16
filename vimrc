@@ -65,10 +65,8 @@ Plug 'https://github.com/junegunn/vim-easy-align.git'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'https://github.com/mhinz/vim-signify.git'
 Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'luochen1990/rainbow'
 Plug 'SirVer/ultisnips'
@@ -110,17 +108,6 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-"" lightline config
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
 "" NerdTree
 map <f8> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=20
@@ -152,39 +139,11 @@ let g:ycm_semantic_triggers =  {
            \ 'c,cpp,python,java,go': ['re!\w{3}'],
            \ }
 
-"" LeaderF config
-let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
-let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
-let g:Lf_WorkingDirectoryMode = 'Ac'
-let g:Lf_WindowHeight = 0.30
-let g:Lf_ShowRelativePath = 0
-let g:Lf_HideHelp = 1
-let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
-let g:Lf_IgnoreCurrentBufferName = 1
-let g:Lf_ShowDevIcons = 0 " show icons but this may fail
-let g:Lf_CacheDirectory = expand('~/.vim/cache')
-let g:Lf_StlColorscheme = 'powerline'
-"let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 0
-" let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
-let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
-
-let g:Lf_ShortcutF = "<C-x>f"
-noremap <C-x>b :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
-noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
-noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
-
-" search visually selected text literally
-xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
-noremap go :<C-U>Leaderf! rg --recall<CR>
-
-"" Disable auto comment
-" It seems this only take affect if put at the last
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 let g:indent_guides_enable_on_vim_startup = 1
 set ts=4 sw=4 et
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
+
+"" Disable auto comment
+" It seems this only take affect if put at the last
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
