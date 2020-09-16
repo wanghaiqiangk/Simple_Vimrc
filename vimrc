@@ -3,6 +3,7 @@ set nocompatible
 
 set exrc
 set secure
+set wildmenu
 
 "" highlight syntax, default
 syntax on
@@ -72,6 +73,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'luochen1990/rainbow'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
 
 "" ultisnips config
@@ -181,3 +183,8 @@ noremap go :<C-U>Leaderf! rg --recall<CR>
 "" Disable auto comment
 " It seems this only take affect if put at the last
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+let g:indent_guides_enable_on_vim_startup = 1
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
