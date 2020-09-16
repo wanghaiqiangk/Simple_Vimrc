@@ -4,11 +4,6 @@ set nocompatible
 set exrc
 set secure
 
-"" remap esc to C-g
-inoremap <C-g> <ESC>
-vnoremap <C-g> <ESC>
-cnoremap <C-g> <C-c>
-
 "" highlight syntax, default
 syntax on
 
@@ -54,7 +49,7 @@ hi CursorLineNR cterm=NONE ctermbg=yellow ctermfg=darkred guibg=NONE
 set ffs=unix
 set encoding=utf-8
 set fileencoding=utf-8
-set listchars=tab:\ \ ,eol:¶
+set listchars=tab:➫\ ,eol:¶
 set list
 
 "" matchit, since vim 6.0 it's built-in
@@ -65,7 +60,6 @@ packadd! matchit
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/junegunn/vim-easy-align.git'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -187,7 +181,3 @@ noremap go :<C-U>Leaderf! rg --recall<CR>
 "" Disable auto comment
 " It seems this only take affect if put at the last
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-"" Autopairs config
-let g:AutoPairsShortcutToggle = "p"
-""""""""""""""""""""""""""""""""""""
