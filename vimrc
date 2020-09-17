@@ -47,9 +47,12 @@ hi CursorLine cterm=NONE ctermbg=yellow ctermfg=darkred guibg=NONE
 hi CursorLineNR cterm=NONE ctermbg=yellow ctermfg=darkred guibg=NONE
 
 "" Show newline character
-set ffs=unix
 set encoding=utf-8
-set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileformats=unix,dos,mac
+set termencoding=utf-8
+set formatoptions+=m
+set formatoptions+=B
 set listchars=tab:➫\ ,eol:¶,trail:▮
 set list
 
