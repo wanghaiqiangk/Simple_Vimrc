@@ -1,31 +1,20 @@
 set nocompatible
-" See https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
-set t_TE= t_TI=
-syntax on
-filetype plugin indent on
-set hlsearch
-set incsearch
-" set autoindent
-
-"" Vim appearance
-set ruler
-set laststatus=2
-set number
-
-" set exrc
-set secure
-set wildmenu
-
-
-"" 允许backspace处理indent, eol, etc.
-set backspace=indent,eol,start
-
-"" Options for tabs
-set tabstop=4           "Set tab size
-set shiftwidth=4        "Set indenting size when use <, >, =
-set softtabstop=4       "Set space size if using spaces as tab
-set expandtab           "Use softtabstop spaces instead of tab character"
-
+set t_TE= t_TI=                " Refer to https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
+syntax on                      " Highlight syntax for specified languages or configurations
+filetype plugin indent on      " automattically detect filetype and enable related plugin and indentation settings in runtimepath
+set hlsearch                   " highlight search results
+set incsearch                  " incremental search
+" set autoindent                 " keep the same indentation as the first line, for ordinary file type
+set wildmenu                   " ex command, <Tab> completion
+set ruler                      " show line number and column number
+set laststatus=2               " 2 means always show status line
+set number                     " show line number besides
+" set exrc                       " read `vimrc` or `exrc` in the current directory
+set backspace=indent,eol,start " make <BS> work more smoothly
+set tabstop=4                  "Set tab size
+set shiftwidth=4               "Set indenting size when use <, >, =
+set softtabstop=4              "Set space size if using spaces as tab
+set expandtab                  "Use softtabstop spaces instead of tab character"
 
 "" Show match, default
 set showmatch
@@ -141,3 +130,4 @@ let g:indent_guides_guide_size = 1
 "" Disable auto comment
 " It seems this only take affect if put at the last
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" set secure " Prohibit shell, write and other commands for security reason, best be put at the end
