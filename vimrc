@@ -1,22 +1,21 @@
-"" 使用VIM按键，而非VI按键
 set nocompatible
+" See https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
+set t_TE= t_TI=
+syntax on
+filetype plugin indent on
+set hlsearch
+set incsearch
+" set autoindent
 
-set exrc
+"" Vim appearance
+set ruler
+set laststatus=2
+set number
+
+" set exrc
 set secure
 set wildmenu
 
-"" highlight syntax, default
-syntax on
-
-"" Auto indent
-set autoindent
-set cindent
-" Manually setup indentation
-set cino+=g0
-
-"" 在状态栏显示信息
-"" 显示行号与列号
-set ruler
 
 "" 允许backspace处理indent, eol, etc.
 set backspace=indent,eol,start
@@ -27,15 +26,6 @@ set shiftwidth=4        "Set indenting size when use <, >, =
 set softtabstop=4       "Set space size if using spaces as tab
 set expandtab           "Use softtabstop spaces instead of tab character"
 
-"" Show line numbers
-set number
-
-"" 显示状态栏
-set laststatus=2
-
-"" Highlight search & Incremental search
-set hlsearch
-set incsearch
 
 "" Show match, default
 set showmatch
@@ -64,17 +54,18 @@ packadd! matchit
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'https://github.com/junegunn/vim-easy-align.git'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/mhinz/vim-signify.git'
-Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'preservim/nerdcommenter'
-Plug 'luochen1990/rainbow'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
+" Plug 'itchyny/lightline.vim'
+" Plug 'https://github.com/junegunn/vim-easy-align.git'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+" Plug 'https://github.com/tpope/vim-fugitive.git'
+" Plug 'https://github.com/mhinz/vim-signify.git'
+" Plug 'https://github.com/tpope/vim-surround.git'
+" Plug 'preservim/nerdcommenter'
+" Plug 'luochen1990/rainbow'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
 
 "" ultisnips config
