@@ -1,39 +1,59 @@
 set nocompatible
-set t_TE= t_TI=                " Refer to https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
-syntax on                      " Highlight syntax for specified languages or configurations
-filetype plugin indent on      " automattically detect filetype and enable related plugin and indentation settings in runtimepath
-set hlsearch                   " highlight search results
-set incsearch                  " incremental search
-" set autoindent                 " keep the same indentation as the first line, for ordinary file type
-set wildmenu                   " ex command, <Tab> completion
-set ruler                      " show line number and column number
-set laststatus=2               " 2 means always show status line
-set number                     " show line number besides
-" set exrc                       " read `vimrc` or `exrc` in the current directory
-set backspace=indent,eol,start " make <BS> work more smoothly
-set tabstop=4                  "Set tab size
-set shiftwidth=4               "Set indenting size when use <, >, =
-set softtabstop=4              "Set space size if using spaces as tab
-set expandtab                  "Use softtabstop spaces instead of tab character"
-
-"" Show match, default
-set showmatch
-
-"" Hightlight current line
-set cursorline
-set cursorlineopt=number
-hi CursorLine cterm=NONE ctermbg=yellow ctermfg=darkred guibg=NONE
-hi CursorLineNR cterm=NONE ctermbg=yellow ctermfg=darkred guibg=NONE
-
-"" Show newline character
+" use utf-8 encoding for vim(including gui and terminal)
 set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set fileformats=unix,dos,mac
+" use utf-8 encoding for terminal vim
 set termencoding=utf-8
+" break between multi-byte character, for asian characters
 set formatoptions+=m
+" when join line, no space between mutli-byte characters
 set formatoptions+=B
-set listchars=tab:➫\ ,eol:¶,trail:▮
+" Refer to https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
+set t_TE= t_TI=
+" Highlight syntax for specified languages or configurations
+syntax on
+" automattically detect filetype and enable related plugin and indentation settings in runtimepath
+filetype plugin indent on
+" highlight search results
+set hlsearch
+" incremental search
+set incsearch
+" keep the same indentation as the first line, for ordinary file type
+" set autoindent
+" ex command, <Tab> completion
+set wildmenu
+" show line number and column number
+set ruler
+" 2 means always show status line
+set laststatus=2
+" show line number besides
+set number
+" read `vimrc` or `exrc` in the current directory
+" set exrc
+" make <BS> work more smoothly
+set backspace=indent,eol,start
+" Set tab size
+set tabstop=4
+" Set indenting size when use <, >, =
+set shiftwidth=4
+" Set space size if using spaces as tab
+set softtabstop=4
+" Use softtabstop spaces instead of tab character"
+set expandtab
+" when insert a bracket, instantaneously jump to the matching one
+set showmatch
+" highlight the text line of cursor
+set cursorline
+" highlight only the line number, not the line itself
+set cursorlineopt=number
+" hi CursorLine cterm=NONE ctermbg=Yellow ctermfg=DarkRed guibg=NONE
+" change how to highlight line number
+hi CursorLineNr cterm=NONE ctermbg=Yellow ctermfg=DarkRed guibg=NONE
+" wrap long line
+set wrap lbr
+" show control characters
 set list
+" customize how to display control characters
+set listchars=tab:➫\ ,eol:¶,trail:▮
 
 "" matchit, since vim 6.0 it's built-in
 packadd! matchit
@@ -130,4 +150,10 @@ let g:indent_guides_guide_size = 1
 "" Disable auto comment
 " It seems this only take affect if put at the last
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+noremap <silent> k gk      " move across one displayed line, not one physical line
+noremap <silent> j gj      " save as above
+noremap <silent> 0 g0      " save as above
+noremap <silent> $ g$      " save as above
+onoremap <silent> j gj     " save as above
+onoremap <silent> k gk     " save as above
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
