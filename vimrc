@@ -150,10 +150,4 @@ let g:indent_guides_guide_size = 1
 "" Disable auto comment
 " It seems this only take affect if put at the last
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-noremap <silent> k gk      " move across one displayed line, not one physical line
-noremap <silent> j gj      " save as above
-noremap <silent> 0 g0      " save as above
-noremap <silent> $ g$      " save as above
-onoremap <silent> j gj     " save as above
-onoremap <silent> k gk     " save as above
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
