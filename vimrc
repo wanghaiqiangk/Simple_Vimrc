@@ -54,14 +54,14 @@ set wrap lbr
 set list
 " customize how to display control characters
 set listchars=tab:➫\ ,eol:¶,trail:▮
-
-"" matchit, since vim 6.0 it's built-in
+" Extend default % functionality
 packadd! matchit
 
 """"""""""""""""""""""""""""""""""""
 """"""""""""vim-plug""""""""""""""""
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plug 'itchyny/lightline.vim'
 " Plug 'https://github.com/junegunn/vim-easy-align.git'
