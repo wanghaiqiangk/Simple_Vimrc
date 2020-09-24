@@ -61,8 +61,8 @@ packadd! matchit
 """"""""""""vim-plug""""""""""""""""
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 " Plug 'itchyny/lightline.vim'
 " Plug 'https://github.com/junegunn/vim-easy-align.git'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
