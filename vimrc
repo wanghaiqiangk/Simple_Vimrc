@@ -63,6 +63,8 @@ packadd! matchit
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'mileszs/ack.vim'
+Plug 'https://github.com/tpope/vim-commentary.git'
 " Plug 'itchyny/lightline.vim'
 " Plug 'https://github.com/junegunn/vim-easy-align.git'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
