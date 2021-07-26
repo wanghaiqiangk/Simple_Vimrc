@@ -56,6 +56,8 @@ set list
 set listchars=tab:➫\ ,eol:¶,trail:▮
 " Extend default % functionality
 packadd! matchit
+" Show search index, also check vim-searchindex plugin
+set shortmess-=S
 
 """"""""""""""""""""""""""""""""""""
 """"""""""""vim-plug""""""""""""""""
