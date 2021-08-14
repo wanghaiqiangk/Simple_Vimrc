@@ -157,3 +157,6 @@ let g:indent_guides_guide_size = 1
 " It seems this only take affect if put at the last
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
+
+set background=dark
+set t_Co=256
