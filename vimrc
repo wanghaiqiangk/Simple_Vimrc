@@ -70,6 +70,7 @@ augroup MyColors
     autocmd!
     " change how to highlight line number
     autocmd ColorScheme * highlight CursorLineNr cterm=NONE ctermbg=Yellow ctermfg=DarkRed guibg=NONE
+                \ | highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
 augroup END
 
 colorscheme default
@@ -77,6 +78,9 @@ colorscheme default
 " better display in tmux
 set background=dark
 set t_Co=256
+
+" Affect async update time
+set updatetime=100
 
 
 """"""""""""""""""""""""""""""""""""
@@ -86,20 +90,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mileszs/ack.vim'
-Plug 'https://github.com/tpope/vim-commentary.git'
+" Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'preservim/nerdcommenter'
 Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/kana/vim-textobj-entire.git'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 " Plug 'itchyny/lightline.vim'
 " Plug 'https://github.com/junegunn/vim-easy-align.git'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-" Plug 'https://github.com/tpope/vim-fugitive.git'
-" Plug 'https://github.com/mhinz/vim-signify.git'
-" Plug 'https://github.com/tpope/vim-surround.git'
-" Plug 'preservim/nerdcommenter'
 " Plug 'luochen1990/rainbow'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 " Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
 
