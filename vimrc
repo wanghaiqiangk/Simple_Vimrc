@@ -1,4 +1,61 @@
-set nocompatible
+function! BetterDefaults() abort
+    " show line number besides
+    set number
+    " highlight the text line of cursor
+    set cursorline
+    " highlight only the line number, not the line itself
+    set cursorlineopt=number
+
+    " see https://www.reddit.com/r/vim/wiki/tabstop
+    set tabstop=8
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+
+    " show line number and column number
+    set ruler
+    " 2 means always show status line
+    set laststatus=2
+
+    " make <BS> work more smoothly
+    set backspace=indent,eol,start
+
+    " Highlight syntax for specified languages or configurations
+    syntax on
+
+    " automattically detect filetype and enable related plugin and indentation settings in runtimepath
+    set autoindent
+    filetype plugin indent on
+
+    set hlsearch
+    set incsearch
+
+    " ex command, <Tab> completion
+    set wildmenu
+    set wildmode=longest:full,full
+
+    " wrap long line
+    set wrap lbr
+
+    " show control characters
+    set list
+    " customize how to display control characters
+    set listchars=tab:➫\ ,eol:¶,trail:▮
+
+    " when insert a bracket, instantaneously jump to the matching one
+    set showmatch
+    " Extend default % functionality
+    packadd! matchit
+
+    " Show search index, also check vim-searchindex plugin
+    set shortmess-=S
+
+    " Refer to https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
+    set t_TE= t_TI=
+endfunction
+
+call BetterDefaults()
+
 " use utf-8 encoding for vim(including gui and terminal)
 set encoding=utf-8
 " use utf-8 encoding for terminal vim
@@ -7,57 +64,20 @@ set termencoding=utf-8
 set formatoptions+=m
 " when join line, no space between mutli-byte characters
 set formatoptions+=B
-" Refer to https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
-set t_TE= t_TI=
-" Highlight syntax for specified languages or configurations
-syntax on
-" automattically detect filetype and enable related plugin and indentation settings in runtimepath
-filetype plugin indent on
-" highlight search results
-set hlsearch
-" incremental search
-set incsearch
-" keep the same indentation as the first line, for ordinary file type
-" set autoindent
-" ex command, <Tab> completion
-set wildmenu
-" show line number and column number
-set ruler
-" 2 means always show status line
-set laststatus=2
-" show line number besides
-set number
-" read `vimrc` or `exrc` in the current directory
-" set exrc
-" make <BS> work more smoothly
-set backspace=indent,eol,start
-" Set tab size
-set tabstop=4
-" Set indenting size when use <, >, =
-set shiftwidth=4
-" Set space size if using spaces as tab
-set softtabstop=4
-" Use softtabstop spaces instead of tab character"
-set expandtab
-" when insert a bracket, instantaneously jump to the matching one
-set showmatch
-" highlight the text line of cursor
-set cursorline
-" highlight only the line number, not the line itself
-set cursorlineopt=number
-" hi CursorLine cterm=NONE ctermbg=Yellow ctermfg=DarkRed guibg=NONE
-" change how to highlight line number
-hi CursorLineNr cterm=NONE ctermbg=Yellow ctermfg=DarkRed guibg=NONE
-" wrap long line
-set wrap lbr
-" show control characters
-set list
-" customize how to display control characters
-set listchars=tab:➫\ ,eol:¶,trail:▮
-" Extend default % functionality
-packadd! matchit
-" Show search index, also check vim-searchindex plugin
-set shortmess-=S
+
+" see https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
+augroup MyColors
+    autocmd!
+    " change how to highlight line number
+    autocmd ColorScheme * highlight CursorLineNr cterm=NONE ctermbg=Yellow ctermfg=DarkRed guibg=NONE
+augroup END
+
+colorscheme default
+
+" better display in tmux
+set background=dark
+set t_Co=256
+
 
 """"""""""""""""""""""""""""""""""""
 """"""""""""vim-plug""""""""""""""""
@@ -153,10 +173,10 @@ set ts=4 sw=4 et
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
 
-"" Disable auto comment
-" It seems this only take affect if put at the last
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup MyAutoCmd
+    autocmd!
+    "" Disable auto comment
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup END
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
 
-set background=dark
-set t_Co=256
