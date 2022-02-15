@@ -83,7 +83,7 @@ set t_Co=256
 """"""""""""vim-plug""""""""""""""""
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'preservim/nerdtree'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mileszs/ack.vim'
 Plug 'https://github.com/tpope/vim-commentary.git'
@@ -136,10 +136,6 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
-
-"" NerdTree
-map <f8> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize=20
 
 "" Signify config
 set updatetime=100
