@@ -88,12 +88,12 @@ set updatetime=100
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension'  }
 Plug 'mileszs/ack.vim'
 " Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'preservim/nerdcommenter'
-Plug 'https://github.com/kana/vim-textobj-user.git'
-Plug 'https://github.com/kana/vim-textobj-entire.git'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
