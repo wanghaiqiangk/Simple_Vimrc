@@ -27,6 +27,7 @@ function! BetterDefaults() abort
     set autoindent
     filetype plugin indent on
 
+    set ignorecase
     set hlsearch
     set incsearch
 
