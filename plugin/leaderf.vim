@@ -9,3 +9,4 @@ xnoremap <leader>. :<C-U><C-R>=printf("Leaderf! rg -F --current-buffer -e %s ", 
 noremap <leader>o :<C-U>Leaderf! rg --recall<CR>
 noremap g<leader>i :LeaderfFunction<CR>
 noremap <leader>i :LeaderfFunctionCword<CR>
+noremap <leader>r :LeaderfMru<CR>
