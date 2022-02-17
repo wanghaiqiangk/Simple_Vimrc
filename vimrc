@@ -103,7 +103,7 @@ Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
-Plug 'Valloric/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --clangd-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --clangd-completer' }
 " Plug 'itchyny/lightline.vim'
 " Plug 'https://github.com/junegunn/vim-easy-align.git'
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
