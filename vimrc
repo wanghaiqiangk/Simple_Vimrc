@@ -104,21 +104,12 @@ Plug 'honza/vim-snippets'
 " Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --clangd-completer' }
-" Plug 'itchyny/lightline.vim'
-" Plug 'https://github.com/junegunn/vim-easy-align.git'
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-" Plug 'luochen1990/rainbow'
+" Plug 'itchyny/lightline.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'luochen1990/rainbow'
 " Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
-
-"" rainbow config
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-
-"" EasyAlign
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 
 let g:indent_guides_enable_on_vim_startup = 1
 set ts=4 sw=4 et
