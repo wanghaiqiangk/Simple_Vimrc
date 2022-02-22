@@ -54,6 +54,10 @@ function! BetterDefaults() abort
 
     " Refer to https://vi.stackexchange.com/questions/27399/whats-t-te-and-t-ti-added-by-vim-8
     set t_TE= t_TI=
+
+    set autochdir
+
+    inoremap <CR> <C-]><C-G>u<CR>
 endfunction
 
 call BetterDefaults()
