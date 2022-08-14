@@ -1,3 +1,34 @@
+# Install Vim
+
+No matter how you install vim, I recommend that at least `python3`, `xterm_clipboard` should be supported which can be inspected via `vim --version | grep -E "python3 | xterm_clipboard"`.
+
+## Simplest Way
+
+```shell
+$ apt install vim
+```
+
+## Enable xterm-clipboard
+
+```shell
+$ apt install vim-gtk3
+```
+
+## PPA
+
+```shell
+$ add-apt-repository ppa:jonathonf/vim
+$ apt update
+$ apt install vim
+```
+
+## Compile from Source
+
+Prerequisites:
+
+- Python, better 3.6+
+- Python shared library(`--enable_shared`)
+
 # How to Start
 
 - Firstly, link the git repository to `$HOME/.vim`, link the vimrc file to `$HOME/.vimrc`:
