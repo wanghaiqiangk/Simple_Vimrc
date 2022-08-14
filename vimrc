@@ -112,6 +112,7 @@ Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py -
 " Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
+Plug 'michaeljsmith/vim-indent-object'
 " Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
 
