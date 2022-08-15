@@ -58,6 +58,8 @@ function! BetterDefaults() abort
     set autochdir
 
     inoremap <CR> <C-]><C-G>u<CR>
+
+    set hidden
 endfunction
 
 call BetterDefaults()
