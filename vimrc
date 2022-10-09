@@ -90,6 +90,14 @@ set t_Co=256
 " Affect async update time
 set updatetime=100
 
+nnoremap <leader>cd :lcd %:h<CR>
+nnoremap <leader>ew :e <C-R>=expand("%:.:h") . "/"<CR>
+nnoremap <leader>hh :help <C-R>=expand("<cword>")<CR>
+
+set cscopetag
+set cscopetagorder=1
+set statusline=%<%{getcwd()}\ \|\ %<%f%y\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
 
 """"""""""""""""""""""""""""""""""""
 """"""""""""vim-plug""""""""""""""""
@@ -122,13 +130,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 set ts=4 sw=4 et
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
-
-nnoremap <leader>cd :lcd %:h<CR>
-nnoremap <leader>ew :e <C-R>=expand("%:.:h") . "/"<CR>
-nnoremap <leader>hh :help <C-R>=expand("<cword>")<CR>
-
-set cscopetag
-set cscopetagorder=1
 
 augroup MyAutoCmd
     autocmd!
