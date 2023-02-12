@@ -62,6 +62,10 @@ function! BetterDefaults() abort
     set hidden
 endfunction
 
+" Change leader key
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
 call BetterDefaults()
 
 " use utf-8 encoding for vim(including gui and terminal)
@@ -111,6 +115,7 @@ nnoremap <S-F4>  :clast<CR>
 """"""""""""vim-plug""""""""""""""""
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/ervandew/supertab'
 Plug 'preservim/nerdtree'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension'  }
 Plug 'mileszs/ack.vim'
