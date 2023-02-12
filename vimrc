@@ -98,6 +98,14 @@ set cscopetag
 set cscopetagorder=1
 set statusline=%<%{getcwd()}\ \|\ %<%f%y\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
+" quickfix
+nnoremap <S-F1>  :cc<CR>
+nnoremap <F2>    :cnext<CR>
+nnoremap <S-F2>  :cprev<CR>
+nnoremap <F3>    :cnfile<CR>
+nnoremap <S-F3>  :cpfile<CR>
+nnoremap <F4>    :cfirst<CR>
+nnoremap <S-F4>  :clast<CR>
 
 """"""""""""""""""""""""""""""""""""
 """"""""""""vim-plug""""""""""""""""
