@@ -31,7 +31,7 @@ let g:ycm_semantic_triggers =  {
            \ }
 
 nnoremap <leader>yy :YcmCompleter 
-nmap <leader>D <Plug>(YCMHover)
+nmap <leader>. <Plug>(YCMHover)
 
 augroup YCMDocCustom
     autocmd!
@@ -39,4 +39,8 @@ augroup YCMDocCustom
                 \ 'command': 'GetDoc',
                 \ 'syntax': &filetype
                 \ }
+    autocmd FileType python {
+        nmap <silent> gd :YcmCompleter GoTo <C-R><C-W><CR>
+        nmap <silent> gD :YcmCompleter GoToReferences <C-R><C-W><CR>
+    }
 augroup END
