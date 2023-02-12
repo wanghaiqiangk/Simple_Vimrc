@@ -64,6 +64,8 @@ endfunction
 
 call BetterDefaults()
 
+let mapleader = " "
+
 " use utf-8 encoding for vim(including gui and terminal)
 set encoding=utf-8
 " use utf-8 encoding for terminal vim
