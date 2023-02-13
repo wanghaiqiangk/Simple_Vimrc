@@ -130,6 +130,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/ervandew/supertab'
 Plug 'preservim/nerdtree'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension'  }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+" Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 " Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'preservim/nerdcommenter'
