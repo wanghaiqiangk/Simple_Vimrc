@@ -78,6 +78,9 @@ let mapleader = " "
 
 call BetterDefaults()
 
+noremap <leader>f :edit <C-R>=expand("%:p:h") . "/"<CR>
+noremap <leader>b :buffers<CR>:buffer<Space>
+
 " use utf-8 encoding for vim(including gui and terminal)
 set encoding=utf-8
 " use utf-8 encoding for terminal vim
@@ -105,7 +108,6 @@ set t_Co=256
 set updatetime=100
 
 nnoremap <leader>cd :lcd %:h<CR>
-nnoremap <leader>ew :e <C-R>=expand("%:.:h") . "/"<CR>
 nnoremap <leader>hh :help <C-R>=expand("<cword>")<CR>
 
 set cscopetag
