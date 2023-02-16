@@ -150,12 +150,12 @@ endif
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'michaeljsmith/vim-indent-object'
-" Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
 set ts=4 sw=4 et
-let g:indent_guides_start_level = 1
+let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 augroup MyAutoCmd
