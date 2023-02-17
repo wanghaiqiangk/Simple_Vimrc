@@ -108,7 +108,6 @@ nnoremap <leader>cd :lcd %:h<CR>
 
 set cscopetag
 set cscopetagorder=1
-set statusline=%<%{getcwd()}\ \|\ %<%f%y\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " quickfix
 nnoremap <S-F1>  :cc<CR>
@@ -145,7 +144,8 @@ else
     Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 endif
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-" Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'michaeljsmith/vim-indent-object'
