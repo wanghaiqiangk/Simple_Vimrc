@@ -153,6 +153,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 if executable("go")
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 endif
+Plug 'preservim/tagbar'
+Plug 'cdelledonne/vim-cmake'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
