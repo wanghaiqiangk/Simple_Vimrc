@@ -139,9 +139,9 @@ Plug 'honza/vim-snippets'
 " Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 if GetSysVersion() <=# "16.04"
-    Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --clangd-completer' }
+    Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --clangd-completer --go-completer' }
 else
-    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --go-completer' }
 endif
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'vim-airline/vim-airline'
