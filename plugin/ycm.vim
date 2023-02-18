@@ -39,8 +39,6 @@ augroup YCMDocCustom
                 \ 'command': 'GetDoc',
                 \ 'syntax': &filetype
                 \ }
-    autocmd FileType c,cpp,python {
-        nmap <silent> gd :YcmCompleter GoTo <C-R><C-W><CR>
-        nmap <silent> gD :YcmCompleter GoToReferences <C-R><C-W><CR>
-    }
+    autocmd FileType c,cpp,python nmap <silent> gd :YcmCompleter GoTo <C-R><C-W><CR>
+                \ | nmap <silent> gD :YcmCompleter GoToReferences <C-R><C-W><CR>
 augroup END
