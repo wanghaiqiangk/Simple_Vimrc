@@ -2,3 +2,4 @@ bundle/
 plugged/
 \.netrwhist
 autoload/plug.vim.old
+plugin/custom.vim
