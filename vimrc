@@ -95,12 +95,6 @@ augroup MyColors
                 \ | highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
 augroup END
 
-colorscheme default
-
-" better display in tmux
-set background=dark
-set t_Co=256
-
 " Affect async update time
 set updatetime=100
 
@@ -155,12 +149,23 @@ if executable("go")
 endif
 Plug 'preservim/tagbar'
 Plug 'cdelledonne/vim-cmake'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
 set ts=4 sw=4 et
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+
+" Colorscheme
+colorscheme default
+" True color. See also xterm-true-color
+" set termguicolors
+" let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+" let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+set background=dark
+set t_Co=256
 
 augroup MyAutoCmd
     autocmd!
