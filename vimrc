@@ -62,16 +62,6 @@ function! BetterDefaults() abort
     set hidden
 endfunction
 
-function! GetSysVersion()
-    let os=substitute(system('uname'), '\n', '', '')
-    if os == 'Darwin' || os == 'Mac'
-        let sys_version=substitute(system('sw_vers -productVersion'), '\n', '', '')
-    elseif os == 'Linux'
-        let sys_version=substitute(system('lsb_release -rs'), '\n', '', '')
-    endif
-    return sys_version
-endfunction
-
 " Change leader key
 nnoremap <SPACE> <Nop>
 let mapleader = " "
@@ -138,7 +128,7 @@ Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
-if GetSysVersion() <=# "16.04"
+if utils#GetSysVersion() <=# "16.04"
     Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --clangd-completer' }
 else
     Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
@@ -168,4 +158,3 @@ augroup MyAutoCmd
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
-
