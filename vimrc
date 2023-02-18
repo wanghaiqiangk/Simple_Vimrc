@@ -42,7 +42,7 @@ function! BetterDefaults() abort
     " show control characters
     set list
     " customize how to display control characters
-    set listchars=tab:➫\ ,eol:¶,trail:▮
+    set listchars=tab:➫\ ,trail:▮
 
     " when insert a bracket, instantaneously jump to the matching one
     set showmatch
