@@ -1,5 +1,5 @@
 "" NerdTree
-nnoremap <f8> :NERDTreeToggle<CR>
+nnoremap <silent> <f8> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=20
 
 augroup AutoNerd

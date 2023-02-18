@@ -1,1 +1,1 @@
-nmap <F9> :TagbarToggle<CR>
+nmap <silent> <F9> :TagbarToggle<CR>
