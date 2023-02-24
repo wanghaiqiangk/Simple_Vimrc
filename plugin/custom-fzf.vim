@@ -10,9 +10,9 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>r :History<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>bb :Buffers<CR>
+nnoremap <leader>fr :History<CR>
 nnoremap <leader>s :Rg<space>
 
 function! s:list_buffers()
@@ -31,3 +31,4 @@ command! BD call fzf#run(fzf#wrap({
             \ 'sink*': { lines -> s:delete_buffers(lines)  },
             \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
             \ }))
+nnoremap <leader>bd :BD<CR>
