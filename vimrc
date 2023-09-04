@@ -106,28 +106,17 @@ nnoremap <S-F4>  :clast<CR>
 """"""""""""vim-plug""""""""""""""""
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/ervandew/supertab'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-" Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'preservim/nerdcommenter'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
-if utils#GetSysVersion() <=# "16.04"
-    Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --clangd-completer' }
-else
-    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --go-completer' }
-endif
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-easy-align'
@@ -140,6 +129,7 @@ endif
 Plug 'preservim/tagbar'
 Plug 'cdelledonne/vim-cmake'
 Plug 'lifepillar/vim-solarized8'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
@@ -156,6 +146,49 @@ colorscheme default
 " let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 set background=dark
 set t_Co=256
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
 
 augroup MyAutoCmd
     autocmd!
