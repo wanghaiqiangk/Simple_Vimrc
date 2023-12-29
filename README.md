@@ -1,53 +1,54 @@
 # Install Vim
 
-No matter how you install vim, I recommend that at least `python3`, `xterm_clipboard` should be supported which can be inspected via `vim --version | grep -E "python3 | xterm_clipboard"`.
+## For Ubuntu User
 
-## Simplest Way
-
-```shell
-$ apt install vim
-```
-
-## Enable xterm-clipboard
+It's possible to install via APT.
 
 ```shell
-$ apt install vim-gtk3
+$ sudo apt install vim
 ```
 
-## PPA
+If you need the ability to copy&paste from system clipboard, you'd better to install Vim with `xterm_clipboard` enabled.
 
 ```shell
-$ add-apt-repository ppa:jonathonf/vim
-$ apt update
-$ apt install vim
+$ sudo apt install vim-gtk3
 ```
 
-## Compile from Source
-
-Prerequisites:
-
-- Python, better 3.6+
-- Python shared library(`--enable_shared`)
-
-# How to Start
-
-- Firstly, link the git repository to `$HOME/.vim`, link the vimrc file to `$HOME/.vimrc`:
+If you need the latest version of Vim, installing from PPA is a quick method.
 
 ```shell
-$ ln -sT $PWD/Simple_Vimrc $HOME/.vim
-$ ln -s $PWD/Simple_Vimrc/vimrc $HOME/.vimrc
+$ sudo add-apt-repository ppa:jonathonf/vim
+$ sudo apt update
+$ sudo apt install vim
 ```
 
-- Secondly, install [vim-plug](https://github.com/junegunn/vim-plug) plugin manager.
+If you find a compilation from source suits your situation, then refer to [this](https://www.vim.org/git.php) for instructions on how to compile.
 
+It would be recommended to install Python >= 3.6 with `--enable_shared` which is depended by Vim and some of plugins used by Vim.
+
+# Configuration
+
+The basic idea is to link `vimrc` (file in the repo) to `$HOME/.vimrc` and `Simple_Vimrc` (the repo itself) to `$HOME/.vim`. This is done in the `install.sh` script. Therefore, all you need is to run this script.
+
+```shell
+git clone https://github.com/wanghaiqiangk/Simple_Vimrc.git
+cd Simple_Vimrc && ./install.sh
 ```
+
+# Plugin Manager
+
+[vim-plug](https://github.com/junegunn/vim-plug) is used.
+
+This should be installed along with Configuration. But if you want to update or reinstall, you can manually download it.
+
+```shell
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 Alternatively, this step can be automatically done by adding the following codes into vim configuration file but before any `plug#begin()` call:
 
-```
+```vimscript
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -55,30 +56,6 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 ```
 
-- Thirdly, the [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) plugin need more operations to make it work.
+# For Neovim User
 
-YCM is a vim plugin with a compiled component. After the previous instructions, you have installed the plugin but not compiled so that ycm server won't start to provide completion feature. 
-
-The simplest step to compile YCM is
-
-```shell
-cd $HOME/.vim/plugged/YouCompletMe
-python3 install
-```
-
-However, it's likely to encounter some errors in practice especially when you are compiling YCM with older vim or older Ubuntu release. It's better to refer official documentation for installation.
-
-# File Tree
-
-```
-.
-├── autoload
-├── ftplugin
-├── plugin
-├── README
-└── vimrc
-```
-
-- `autoload` folder is the place for `vim-plug` only right now
-- `ftplugin` folder is the place for file type specified configuration
-- `plugin` folder is the place for user defined configuration
+If you actually use [Neovim](https://neovim.io/), the original Vim configuration and plugins can be smoothly migrated to Neovim. The transition is documented in [Transitioning from vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim).
