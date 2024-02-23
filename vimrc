@@ -89,6 +89,7 @@ augroup END
 set updatetime=100
 
 nnoremap <leader>cd :lcd %:h<CR>
+nnoremap <silent> <C-n> :noh<CR>
 
 set cscopetag
 set cscopetagorder=1
