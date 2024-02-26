@@ -91,8 +91,10 @@ set updatetime=100
 nnoremap <leader>cd :lcd %:h<CR>
 nnoremap <silent> <C-n> :noh<CR>
 
-set cscopetag
-set cscopetagorder=1
+if !has('nvim')
+    set cscopetag
+    set cscopetagorder=1
+endif
 
 " quickfix
 nnoremap <S-F1>  :cc<CR>
@@ -118,8 +120,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'michaeljsmith/vim-indent-object'
