@@ -90,6 +90,7 @@ set updatetime=100
 
 nnoremap <leader>cd :lcd %:h<CR>
 nnoremap <silent> <C-n> :noh<CR>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h')..'/' : '%%'
 
 if !has('nvim')
     set cscopetag
@@ -141,12 +142,14 @@ let g:indent_guides_guide_size = 1
 
 
 " Colorscheme
-colorscheme default
+if !has('gui_running')
+    colorscheme default
+    set background=dark
+endif
 " True color. See also xterm-true-color
 " set termguicolors
 " let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 " let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
-set background=dark
 set t_Co=256
 
 " Use tab for trigger completion with characters ahead and navigate
