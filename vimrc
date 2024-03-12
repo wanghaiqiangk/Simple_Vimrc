@@ -105,15 +105,6 @@ if !has('nvim')
     set cscopetagorder=1
 endif
 
-" quickfix
-nnoremap <S-F1>  :cc<CR>
-nnoremap <F2>    :cnext<CR>
-nnoremap <S-F2>  :cprev<CR>
-nnoremap <F3>    :cnfile<CR>
-nnoremap <S-F3>  :cpfile<CR>
-nnoremap <F4>    :cfirst<CR>
-nnoremap <S-F4>  :clast<CR>
-
 """"""""""""""""""""""""""""""""""""
 """"""""""""vim-plug""""""""""""""""
 """"""""""""""""""""""""""""""""""""
@@ -126,6 +117,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
