@@ -89,9 +89,10 @@ augroup END
 set updatetime=100
 
 " Key mappings
-nnoremap <leader>cd :lcd %:h<CR>
+nnoremap <silent> <leader>cd :lcd %:h<CR>:pwd<CR>
 nnoremap <silent> <C-n> :noh<CR>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h')..'/' : '%%'
+inoremap <c-u> <esc>gUiwA
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -101,8 +102,15 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 if !has('nvim')
+    " Vim
     set cscopetag
     set cscopetagorder=1
+    nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+    nnoremap <leader>sv :source $MYVIMRC<cr>
+else
+    " NeoVim
+    nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+    nnoremap <leader>sv :source ~/.vimrc<cr>
 endif
 
 """"""""""""""""""""""""""""""""""""
