@@ -200,6 +200,24 @@ function! ShowDocumentation()
   endif
 endfunction
 
+let s:myfonts = ["Fira Mono"]
+let s:myfontsize = 18
+function! IncreaseFontSize(inc)
+    let s:myfontsize += a:inc
+    let &guifont = s:myfonts[0] .. ":h" .. s:myfontsize
+endfunction
+function! DecreaseFontSize(dec)
+    let s:myfontsize += a:dec
+    let &guifont = s:myfonts[0] .. ":h" .. s:myfontsize
+endfunction
+
+if exists("g:neovide")
+    " Put configurations specific to neovide
+    set guifont=Fira\ Mono:h18
+    nnoremap <silent> <C-ScrollWheelUp> :call DecreaseFontSize(-1)<CR>
+    nnoremap <silent> <C-ScrollWheelDown> :call IncreaseFontSize(1)<CR>
+endif
+
 augroup MyAutoCmd
     autocmd!
     "" Disable auto comment
