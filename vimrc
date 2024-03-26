@@ -187,12 +187,8 @@ let g:coc_snippet_next = '<tab>'
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
+nmap <silent> gr <Plug>(coc-rename)
 " Use K to show documentation in preview window
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
@@ -203,9 +199,6 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
-
-" Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
 
 augroup MyAutoCmd
     autocmd!
