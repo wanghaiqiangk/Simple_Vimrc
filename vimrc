@@ -208,4 +208,9 @@ augroup MyAutoCmd
     "" Disable auto comment
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
+
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
