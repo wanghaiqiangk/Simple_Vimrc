@@ -77,16 +77,10 @@ set formatoptions+=m
 " when join line, no space between mutli-byte characters
 set formatoptions+=B
 
-" see https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
-augroup MyColors
-    autocmd!
-    " change how to highlight line number
-    autocmd ColorScheme * highlight CursorLineNr cterm=NONE ctermbg=Yellow ctermfg=DarkRed guibg=NONE
-                \ | highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
-augroup END
-
 " Affect async update time
 set updatetime=100
+" Always show sign column
+set signcolumn=yes
 
 " Key mappings
 nnoremap <silent> <leader>cd :lcd %:h<CR>:pwd<CR>
@@ -128,7 +122,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
-Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
@@ -148,17 +143,26 @@ set ts=4 sw=4 et
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
+" Colorscheme {{{
+" see https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
+augroup MyColors
+    autocmd!
+    " change how to highlight line number
+    autocmd ColorScheme * highlight CursorLineNr cterm=NONE ctermbg=Yellow ctermfg=DarkRed gui=NONE guifg=DarkRed guibg=Yellow
+                \ | highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
+                \ | highlight GitGutterAdd    guifg=#009900 ctermfg=2
+                \ | highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+                \ | highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+augroup END
 
-" Colorscheme
-if !has('gui_running')
-    colorscheme default
-    set background=dark
-endif
+colorscheme default
+
 " True color. See also xterm-true-color
 " set termguicolors
 " let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 " let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 set t_Co=256
+" }}}
 
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
