@@ -14,5 +14,5 @@ function! GrepOperator(type)
     copen
 
     let number_of_results = len(getqflist())
-    echom number_of_results . " results found."
+    redraw | echom number_of_results . " results found."
 endfunction
