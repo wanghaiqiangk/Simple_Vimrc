@@ -98,6 +98,8 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 cnoreabbrev man Man
 nnoremap g. *``
 
+vnoremap <leader>y "+y
+
 if !has('nvim')
     " Vim
     set cscopetag
