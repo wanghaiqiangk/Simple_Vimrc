@@ -161,12 +161,18 @@ augroup MyColors
 augroup END
 
 colorscheme default
-
+set background=dark "XXX: why does Vim guess the background to light?
+if exists("$TMUX")
+    " Set allow-passthrough option on, the option was added since tmux 3.3
+    let &t_RB = "\ePtmux;\e\e]11;?\007\e\\"
+endif
 " True color. See also xterm-true-color
-" set termguicolors
-" let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-" let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
-set t_Co=256
+" Personal taste: I don't like the appearance of true color under default colorscheme
+" if has('termguicolors')
+	" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	" set termguicolors
+" endif
 " }}}
 
 " Use tab for trigger completion with characters ahead and navigate
