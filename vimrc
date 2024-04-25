@@ -86,7 +86,7 @@ set signcolumn=yes
 nnoremap <silent> <leader>cd :lcd %:h<CR>:pwd<CR>
 nnoremap <silent> <C-n> :noh<CR>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h')..'/' : '%%'
-inoremap <c-u> <esc>gUiwA
+inoremap <c-u> <esc>gUiwea
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -155,9 +155,9 @@ augroup MyColors
     " change how to highlight line number
     autocmd ColorScheme * highlight CursorLineNr cterm=NONE ctermbg=Yellow ctermfg=DarkRed gui=NONE guifg=DarkRed guibg=Yellow
                 \ | highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
-                \ | highlight GitGutterAdd    guifg=#009900 ctermfg=2
-                \ | highlight GitGutterChange guifg=#bbbb00 ctermfg=3
-                \ | highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+                \ | highlight GitGutterAdd    guifg=#009900 guibg=NONE ctermfg=2 ctermbg=NONE
+                \ | highlight GitGutterChange guifg=#bbbb00 guibg=NONE ctermfg=3 ctermbg=NONE
+                \ | highlight GitGutterDelete guifg=#ff2222 guibg=NONE ctermfg=1 ctermbg=NONE
 augroup END
 
 colorscheme default
