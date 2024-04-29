@@ -100,6 +100,13 @@ nnoremap g. *``
 
 vnoremap <leader>y "+y
 
+" tags
+nnoremap <c-]> g<c-]>
+vnoremap <c-]> g<c-]>
+
+nnoremap g<c-]> <c-]>
+vnoremap g<c-]> <c-]>
+
 if !has('nvim')
     " Vim
     set cscopetag
