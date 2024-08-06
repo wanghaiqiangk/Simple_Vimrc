@@ -14,3 +14,4 @@ cnoreabbrev Ack Ack!
 
 " Maps <leader>/ so we're ready to type the search keyword
 nnoremap <Leader>/ :Ack!<Space>
+nnoremap <Leader>. :Ack!<Space><c-r><c-w><Space>
