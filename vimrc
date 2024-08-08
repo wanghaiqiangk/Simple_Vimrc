@@ -96,7 +96,6 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 cnoreabbrev man Man
-nnoremap g. *``
 
 vnoremap <leader>y "+y
 
@@ -236,6 +235,9 @@ augroup MyAutoCmd
     autocmd!
     "" Disable auto comment
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    autocmd TermOpen,TermEnter * setlocal nonumber
+                \ | setlocal signcolumn=no
+    autocmd TermOpen * startinsert
 augroup END
 
 augroup filetype_vim
