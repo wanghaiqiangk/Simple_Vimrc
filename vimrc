@@ -86,7 +86,7 @@ set signcolumn=yes
 nnoremap <silent> <leader>cd :lcd %:h<CR>:pwd<CR>
 nnoremap <silent> <C-n> :noh<CR>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h')..'/' : '%%'
-inoremap <c-u> <esc>gUiwea
+inoremap <A-u> <esc>gUiwea
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
