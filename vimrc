@@ -235,9 +235,11 @@ augroup MyAutoCmd
     autocmd!
     "" Disable auto comment
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-    autocmd TermOpen,TermEnter * setlocal nonumber
-                \ | setlocal signcolumn=no
-    autocmd TermOpen * startinsert
+    if has("nvim")
+        autocmd TermOpen,TermEnter * setlocal nonumber
+                    \ | setlocal signcolumn=no
+        autocmd TermOpen * startinsert
+    endif
 augroup END
 
 augroup filetype_vim
