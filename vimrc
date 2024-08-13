@@ -140,7 +140,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'nvim-treesitter/nvim-treesitter-context'
 if executable("go")
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 endif
