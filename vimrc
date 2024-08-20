@@ -150,6 +150,7 @@ Plug 'preservim/tagbar'
 Plug 'cdelledonne/vim-cmake'
 Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dhananjaylatkar/cscope_maps.nvim'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
