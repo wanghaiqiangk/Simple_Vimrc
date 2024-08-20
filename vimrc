@@ -94,8 +94,11 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+cnoremap <A-p> <Up>
+cnoremap <A-n> <Down>
 
 cnoreabbrev man Man
+cnoreabbrev git Git
 
 vnoremap <leader>y "+y
 
@@ -203,7 +206,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gx <Plug>(coc-references)
 nmap <silent> gr <Plug>(coc-rename)
 " Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
+nnoremap <silent> gh :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
