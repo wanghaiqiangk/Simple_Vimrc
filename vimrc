@@ -108,6 +108,11 @@ vnoremap <c-]> g<c-]>
 
 nnoremap g<c-]> <c-]>
 vnoremap g<c-]> <c-]>
+if !has('nvim')
+    " nvim has these mappings by default
+    vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
+    vnoremap # y?\V<C-R>=escape(@",'/\')<CR><CR>
+endif
 
 if !has('nvim')
     " Vim
