@@ -2,10 +2,12 @@ nnoremap <silent> <leader>g :set operatorfunc=GrepOperator<cr>g@
 vnoremap <silent> <leader>g :<c-u>call GrepOperator(visualmode())<cr>
 
 function! GrepOperator(type)
+    let saved_unnamed_register = @@
+
     if a:type ==# 'v'
-        execute "normal! `<v`>y"
+        normal! `<v`>y
     elseif a:type ==# 'char'
-        execute "normal! `[v`]y"
+        normal! `[y`]
     else
         return
     endif
@@ -14,5 +16,8 @@ function! GrepOperator(type)
     copen
 
     let number_of_results = len(getqflist())
-    redraw | echom number_of_results . " results found."
+    echo number_of_results . " results found."
+    redraw
+
+    let @@ = saved_unnamed_register
 endfunction
