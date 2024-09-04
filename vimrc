@@ -102,6 +102,11 @@ cnoreabbrev git Git
 
 vnoremap <leader>y "+y
 
+nnoremap <leader>cq :cclose<cr>
+nnoremap <leader>cl :lclose<cr>
+nnoremap <leader>oq :copen<cr>
+nnoremap <leader>ol :lopen<cr>
+
 " tags
 nnoremap <c-]> g<c-]>
 vnoremap <c-]> g<c-]>
