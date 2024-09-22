@@ -150,7 +150,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'luochen1990/rainbow'
+" Plug 'luochen1990/rainbow'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'nathanaelkane/vim-indent-guides'
 if executable("go")
@@ -161,6 +161,7 @@ Plug 'cdelledonne/vim-cmake'
 Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dhananjaylatkar/cscope_maps.nvim'
+Plug 'pboettch/vim-cmake-syntax'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
