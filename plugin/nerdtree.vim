@@ -1,6 +1,7 @@
-"" NerdTree
-nnoremap <silent> <f8> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize=20
+let NERDTreeQuitOnOpen=1
+
+nnoremap <silent> <leader>ee :NERDTreeToggle<CR>
+nnoremap <silent> <leader>ef :NERDTreeFind<CR>
 
 augroup AutoNerd
     autocmd!
