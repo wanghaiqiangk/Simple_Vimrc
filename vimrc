@@ -162,6 +162,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dhananjaylatkar/cscope_maps.nvim'
 Plug 'pboettch/vim-cmake-syntax'
 Plug 'tibabit/vim-templates'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
@@ -261,4 +262,6 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+let g:sneak#label = 1
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
