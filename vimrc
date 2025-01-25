@@ -216,7 +216,7 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gx <Plug>(coc-references)
+nmap <silent> gD <Plug>(coc-references)
 nmap <silent> gr <Plug>(coc-rename)
 " Use K to show documentation in preview window
 nnoremap <silent> gh :call ShowDocumentation()<CR>
