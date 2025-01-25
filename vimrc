@@ -68,6 +68,8 @@ let mapleader = " "
 
 call BetterDefaults()
 
+set clipboard+=unnamedplus
+
 " use utf-8 encoding for vim(including gui and terminal)
 set encoding=utf-8
 " use utf-8 encoding for terminal vim
@@ -99,8 +101,6 @@ cnoremap <A-n> <Down>
 
 cnoreabbrev man Man
 cnoreabbrev git Git
-
-vnoremap <leader>y "+y
 
 nnoremap <leader>cq :cclose<cr>
 nnoremap <leader>cl :lclose<cr>
