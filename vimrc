@@ -136,7 +136,7 @@ endif
 """"""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }  }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdcommenter'
