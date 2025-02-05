@@ -249,13 +249,20 @@ endif
 
 augroup MyAutoCmd
     autocmd!
+
     "" Disable auto comment
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
     if has("nvim")
         autocmd TermOpen,TermEnter * setlocal nonumber
                     \ | setlocal signcolumn=no
         autocmd TermOpen * startinsert
     endif
+
+    autocmd BufReadPost *
+                \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+                \ |   exe "normal! g`\""
+                \ | endif
 augroup END
 
 augroup filetype_vim
@@ -264,4 +271,5 @@ augroup filetype_vim
 augroup END
 
 let g:sneak#label = 1
+
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
