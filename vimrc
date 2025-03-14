@@ -270,6 +270,4 @@ augroup filetype_vim
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
-let g:sneak#label = 1
-
 " set secure " Prohibit shell, write and other commands for security reason, best be put at the end
