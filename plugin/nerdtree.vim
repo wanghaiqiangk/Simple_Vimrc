@@ -5,5 +5,7 @@ nnoremap <silent> <leader>ef :NERDTreeFind<CR>
 
 augroup AutoNerd
     autocmd!
-    autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
+    if exists("g:loaded_nerd_tree")
+        autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
+    endif
 augroup END
