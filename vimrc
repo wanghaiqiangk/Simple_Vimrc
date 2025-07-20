@@ -250,8 +250,8 @@ endif
 augroup MyAutoCmd
     autocmd!
 
-    "" Disable auto comment
-    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    " Disable auto comment
+    autocmd FileType * setlocal formatoptions-=c
 
     if has("nvim")
         autocmd TermOpen,TermEnter * setlocal nonumber
